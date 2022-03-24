@@ -1,6 +1,7 @@
 import React from 'react'
 import { Menu } from 'antd'
 import { Link } from 'react-router-dom'
+import Avatar from '../Avatar'
 
 function Sider() {
   return (
@@ -10,6 +11,9 @@ function Sider() {
         mode="vertical"
         theme="dark"
       >
+        <Menu.Item style={{height: '45px'}}>
+          <Avatar />
+        </Menu.Item>
         <Menu.Item key="platform" >
           <Link to='/platform'>platform</Link>
         </Menu.Item>
