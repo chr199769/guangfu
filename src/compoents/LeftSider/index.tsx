@@ -5,7 +5,7 @@ import Avatar from '../Avatar'
 
 function Sider() {
   return (
-    <div style={{ width: 256 }}>
+    <div style={{ width: 200 }}>
       <Menu
         defaultSelectedKeys={['platform']}
         mode="vertical"
