@@ -1,11 +1,11 @@
 import { Button } from 'antd'
 import React from 'react'
+import Map from './Map'
 
 function Platfrom() {
   return (
     <>
-      <div>Platfrom</div>
-      <Button type='primary'>123121</Button>
+      <Map />
     </>
   )
 }
