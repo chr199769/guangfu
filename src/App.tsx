@@ -9,27 +9,20 @@ import Monitor from './pages/monitor';
 import Platfrom from './pages/platfrom';
 
 const { Content, Sider } = Layout
-
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/login' element={<Login />} />
-      </Routes>
-      <Layout className='App'>
-        <Sider>
-          <LeftSider />
-        </Sider>
-        <Content>
-          <Routes>
-            <Route path='/platform' element={<Platfrom />} />
-            <Route path='/monitor' element={<Monitor />} />
-            <Route path='/dangerReport' element={<DangerReport />} />
-          </Routes>
-        </Content>
-      </Layout>
-    </BrowserRouter>
-
+    <Layout className='App'>
+      <Sider>
+        <LeftSider />
+      </Sider>
+      <Content>
+        <Routes>
+          <Route path='platform' element={<Platfrom />} />
+          <Route path='monitor' element={<Monitor />} />
+          <Route path='dangerReport' element={<DangerReport />} />
+        </Routes>
+      </Content>
+    </Layout>
   );
 }
 
