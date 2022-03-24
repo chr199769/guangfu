@@ -69,7 +69,7 @@ const LoginForm = (props: Props) => {
         }}
       >
         <Button type="primary" htmlType="submit">
-          Submit
+          提交
         </Button>
       </Form.Item>
     </Form>
