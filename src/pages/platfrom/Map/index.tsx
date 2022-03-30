@@ -1,92 +1,65 @@
 import React, { useState, useEffect } from 'react';
-import { ChoroplethMap, ChoroplethMapConfig } from '@ant-design/maps';
+import { DotMap, DotMapConfig, registerImages } from '@ant-design/maps';
 
 const Map = () => {
-  const [list, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     asyncFetch();
   }, []);
 
   const asyncFetch = () => {
-    fetch('https://gw.alipayobjects.com/os/alisis/geo-data-v0.1.1/administrative-data/area-list.json')
+    fetch('https://gw.alipayobjects.com/os/basement_prod/893d1d5f-11d9-45f3-8322-ee9140d288ae.json')
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((error) => {
         console.log('fetch data failed', error);
       });
   };
-  const data = list
-    .filter(({ level, parent }) => level === 'district' && parent === 330100)
-    .map((item) =>
-      Object.assign({}, item, {
-        value: Math.random() * 5000,
-      }),
-    );
-  const config: ChoroplethMapConfig = {
+  const images = [
+    {
+      id: '01',
+      image: 'https://gw.alipayobjects.com/zos/basement_prod/604b5e7f-309e-40db-b95b-4fac746c5153.svg',
+    },
+    {
+      id: '02',
+      image: 'https://gw.alipayobjects.com/zos/basement_prod/30580bc9-506f-4438-8c1a-744e082054ec.svg',
+    },
+    {
+      id: '03',
+      image: 'https://gw.alipayobjects.com/zos/basement_prod/7aa1f460-9f9f-499f-afdf-13424aa26bbf.svg',
+    },
+  ];
+  registerImages(images);
+  const config: DotMapConfig = {
     map: {
       type: 'mapbox',
-      style: 'blank',
-      center: [120.19382669582967, 30.258134],
-      zoom: 3,
+      style: 'dark',
+      center: [121.409765, 31.256735],
+      zoom: 14.5,
       pitch: 0,
     },
     source: {
       data: data,
-      joinBy: {
-        sourceField: 'adcode',
-        geoField: 'adcode',
+      parser: {
+        type: 'json',
+        x: 'longitude',
+        y: 'latitude',
       },
     },
-    viewLevel: {
-      level: 'city',
-      adcode: 330100,
-    },
-    autoFit: true,
-    color: {
-      field: 'value',
-      value: ['#B8E1FF', '#7DAAFF', '#3D76DD', '#0047A5', '#001D70'],
-      scale: {
-        type: 'quantize',
-      },
-    },
-    style: {
-      opacity: 1,
-      stroke: '#ccc',
-      lineWidth: 0.6,
-      lineOpacity: 1,
-    },
-    label: {
-      visible: true,
+    color: '#fff',
+    shape: {
       field: 'name',
-      style: {
-        fill: '#000',
-        opacity: 0.8,
-        fontSize: 10,
-        stroke: '#fff',
-        strokeWidth: 1.5,
-        textAllowOverlap: false,
-        padding: [5, 5],
-      },
+      value: ['01', '02', '03'],
     },
-    state: {
-      active: {
-        stroke: 'black',
-        lineWidth: 1,
-      },
-    },
-    tooltip: {
-      items: ['name', 'adcode', 'value'],
-    },
-    zoom: {
-      position: 'bottomright',
-    },
-    legend: {
-      position: 'bottomleft',
-    },
+    size: 20,
   };
 
-  return <ChoroplethMap {...config} />;
+  return (
+    <div style={{height: '500px'}}>
+      <DotMap {...config} />
+    </div>
+  )
 };
 
 export default Map
