@@ -2,11 +2,11 @@ import React from 'react';
 import { Layout } from 'antd';
 import { Routes, Route } from 'react-router-dom';
 import './App.less';
-import LeftSider from './compoents/LeftSider';
+import LeftSider from './components/LeftSider';
 import DangerReport from './pages/dangerReport';
 import Monitor from './pages/monitor';
 import Platfrom from './pages/platfrom';
-import Header from './compoents/Header';
+import Header from './components/Header';
 
 const { Content, Sider } = Layout
 function App() {
