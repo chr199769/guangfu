@@ -1,5 +1,5 @@
 import React from 'react'
-import BasicPie from '../../../components/BasicPie'
+import BasePie from '../../../components/BasePie'
 import styles from './index.module.less'
 
 function PieContainer() {
@@ -42,17 +42,17 @@ function PieContainer() {
   return (
     <div className={styles['pie-container']}>
       <div className={styles['factor-info-container']}>
-        <BasicPie className={styles['pie']} config={factorConfig}/>
-        <BasicPie className={styles['pie']} config={powerConfig}/>
+        <BasePie className={styles['pie']} config={factorConfig}/>
+        <BasePie className={styles['pie']} config={powerConfig}/>
       </div>
       <div className={styles['env-info-container']}>
-        <BasicPie className={styles['pie']} config={factorConfig}/>
-        <BasicPie className={styles['pie']} config={powerConfig}/>
-        <BasicPie className={styles['pie']} config={factorConfig}/>
-        <BasicPie className={styles['pie']} config={powerConfig}/>
+        <BasePie className={styles['pie']} config={factorConfig}/>
+        <BasePie className={styles['pie']} config={powerConfig}/>
+        <BasePie className={styles['pie']} config={factorConfig}/>
+        <BasePie className={styles['pie']} config={powerConfig}/>
       </div>
       <div className={styles['power-info-container']}>
-        <BasicPie className={styles['pie']} config={factorConfig}/>
+        <BasePie className={styles['pie']} config={factorConfig}/>
       </div>
     </div>
   )
