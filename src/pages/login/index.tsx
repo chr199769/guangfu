@@ -3,10 +3,13 @@ import LoginForm from "./LoginForm";
 import styles from './index.module.less';
 import { Card, Image } from "antd";
 import LoginCardImg from '../../static/LoginCardImg.jpeg';
+import Service from '../../utils/api';
+
 
 const Login = () => {
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
+  const onFinish = async (values: any) => {
+    const res = await Service.login();
+    console.log('Success:', res);
   };
 
   const onFinishFailed = (errorInfo: any) => {

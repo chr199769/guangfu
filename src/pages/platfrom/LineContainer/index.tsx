@@ -5,10 +5,10 @@ import BaseLine from '../../../components/BaseLine'
 const LineContainer = () => {
   return (
     <>
-      <div style={{height: '300px'}}>
+      <div style={{height: '350px'}}>
         <BaseLine />
       </div>
-      <div style={{height: '300px'}}>
+      <div style={{height: '350px'}}>
         <BaseColumn />
       </div>
     </>

@@ -8,7 +8,7 @@ function Platfrom() {
   return (
     <div style={{ height: '100%' }}>
       <Layout >
-        <Layout style={{ flexGrow: 4 }}>
+        <Layout>
           <Layout.Sider width='20%'/>
           <Layout.Content>
             <Map/>
@@ -17,7 +17,7 @@ function Platfrom() {
             <LineContainer />
           </Layout.Sider>
         </Layout>
-        <Layout.Footer style={{ flexGrow: 1 }}>
+        <Layout.Footer>
           <PieContainer />
         </Layout.Footer>
       </Layout>
