@@ -150,5 +150,6 @@
   "devDependencies": {
     "@teamsupercell/typings-for-css-modules-loader": "^2.5.1",
     "less": "^4.1.2"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

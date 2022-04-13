@@ -1,19 +1,34 @@
 import React from "react";
 import LoginForm from "./LoginForm";
 import styles from './index.module.less';
-import { Card, Image } from "antd";
+import { Card, Image, notification } from "antd";
 import LoginCardImg from '../../static/LoginCardImg.jpeg';
 import Service from '../../utils/api';
+import { useNavigate } from "react-router";
 
 
 const Login = () => {
-  const onFinish = async (values: any) => {
-    const res = await Service.login();
-    console.log('Success:', res);
+  let nav = useNavigate()
+  const onFinish = async () => {
+    try {
+      const { statusCode } = await Service.login();
+      if (statusCode === 0) {
+        nav('/platform')
+      }
+    } catch {
+      notification['error']({
+        message: '网络连接失败',
+        placement: 'top',
+      });
+    }
+    
   };
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+  const onFinishFailed = () => {
+    notification['error']({
+      message: '登录校验失败，请重新输入',
+      placement: 'top',
+    });
   };
 
   return (

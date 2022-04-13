@@ -5,7 +5,9 @@ export interface ChartsProps {
 
 export type ServiceMap = Record<string, {
   url: string;
-  method: 'GET' | 'POST'
+  method: 'GET' | 'POST';
+  headers?: any;
+  timeout?: number;
 }>;
 
 export interface BaseResponse<T = any> {

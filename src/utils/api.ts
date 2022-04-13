@@ -1,14 +1,8 @@
 import axios from 'axios';
 import { BaseRequestFunc, ServiceMap } from '../typings';
+import { serviceMap } from './servicemap'
 
 const service = {} as Record<keyof typeof serviceMap, BaseRequestFunc>;
-
-const serviceMap: ServiceMap = {
-  login: {
-    url: '/login',
-    method: 'GET',
-  }
-}
 
 const ServiceCreator = (serviceMap: ServiceMap) => {
   const directService: any = {};
@@ -19,6 +13,8 @@ const ServiceCreator = (serviceMap: ServiceMap) => {
       return axios(`${mapItem.url}`, {
         method: mapItem.method,
         params: mapItem.method === 'GET' ? params : undefined,
+        headers: mapItem.headers,
+        timeout: mapItem.timeout,
         data: mapItem.method === 'POST' ? params : undefined,
       });
     };
