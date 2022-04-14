@@ -1,15 +1,19 @@
 import { Layout } from 'antd'
 import React from 'react'
+import CardContainer from './CardContainer'
 import LineContainer from './LineContainer'
 import Map from './Map'
 import PieContainer from './PieContainer'
 
 function Platfrom() {
+
   return (
     <div style={{ height: '100%' }}>
       <Layout >
         <Layout>
-          <Layout.Sider width='20%'/>
+          <Layout.Sider width='20%'>
+            <CardContainer />
+          </Layout.Sider>
           <Layout.Content>
             <Map/>
           </Layout.Content>

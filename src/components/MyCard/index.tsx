@@ -1,24 +1,23 @@
 import { Card } from 'antd'
 import { create } from 'domain'
-import React, { useEffect, useState } from 'react'
+import React, { Children, useEffect, useState } from 'react'
+import CardContent from '../CardContent'
+import styles from './index.module.less'
 
-function MyCard() {
-  const [loading, setLoading] = useState(true)
-  const getData = () => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 10000)
-  }
-  
-  useEffect(() => {
-    getData()
-  }, [])
+interface Props {
+  children: any;
+}
+function MyCard(props: Props) {
+  const { children } = props
   
   return (
-    <Card loading={loading}>
-      <p>Card content</p>
-      <p>Card content</p>
-      <p>Card content</p>
+    <Card className={styles.card} bodyStyle={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-around',
+      height: '100%',
+    }}>
+      {children}
     </Card>
   )
 }

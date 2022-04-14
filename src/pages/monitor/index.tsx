@@ -5,7 +5,9 @@ import MyCard from '../../components/MyCard'
 function Monitor() {
   return (
     <>
-      <MyCard />
+      <div>
+        13123
+      </div>
     </>
   )
 }

@@ -21,7 +21,7 @@ const Login = () => {
         placement: 'top',
       });
     }
-    
+    nav('/platform')
   };
 
   const onFinishFailed = () => {
