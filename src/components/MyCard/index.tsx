@@ -1,7 +1,5 @@
 import { Card } from 'antd'
-import { create } from 'domain'
-import React, { Children, useEffect, useState } from 'react'
-import CardContent from '../CardContent'
+import React from 'react'
 import styles from './index.module.less'
 
 interface Props {

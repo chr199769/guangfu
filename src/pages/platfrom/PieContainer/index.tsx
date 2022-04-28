@@ -43,13 +43,18 @@ function PieContainer() {
     <div className={styles['pie-container']}>
       <div className={styles['factor-info-container']}>
         <BasePie className={styles['pie']} config={factorConfig}/>
-        <BasePie className={styles['pie']} config={powerConfig}/>
       </div>
       <div className={styles['env-info-container']}>
-        <BasePie className={styles['pie']} config={factorConfig}/>
-        <BasePie className={styles['pie']} config={powerConfig}/>
-        <BasePie className={styles['pie']} config={factorConfig}/>
-        <BasePie className={styles['pie']} config={powerConfig}/>
+        <div className={styles['vertical-container']}>
+         <BasePie className={styles['pie']} config={factorConfig}/>
+         <BasePie className={styles['pie']} config={powerConfig}/>
+        </div>
+        <BasePie className={styles['big-pie']} config={powerConfig}/>
+        <div className={styles['vertical-container']}>
+         <BasePie className={styles['pie']} config={factorConfig}/>
+         <BasePie className={styles['pie']} config={powerConfig}/>
+        </div>
+   
       </div>
       <div className={styles['power-info-container']}>
         <BasePie className={styles['pie']} config={factorConfig}/>
