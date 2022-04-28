@@ -1,12 +1,16 @@
 import React from 'react'
-import MyAvatar from '../../components/Avatar'
+import { useParams } from 'react-router-dom'
+import LineContainer from '../../components/LineContainer'
 import MyCard from '../../components/MyCard'
+import styles from './index.module.less'
 
 function Monitor() {
+  const { deviceId } = useParams()
   return (
     <>
-      <div>
-        13123
+      <div className={styles['monitor-container']}>
+        <MyCard />
+        <LineContainer />
       </div>
     </>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
-import BaseColumn from '../../../components/BaseColumn'
-import BaseLine from '../../../components/BaseLine'
+import BaseColumn from '../BaseColumn'
+import BaseLine from '../BaseLine'
 
 const LineContainer = () => {
   return (

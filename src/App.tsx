@@ -22,7 +22,7 @@ function App() {
         <Content>
           <Routes>
             <Route path='platform' element={<Platfrom />} />
-            <Route path='monitor' element={<Monitor />} />
+            <Route path='monitor/:deviceId' element={<Monitor />} />
             <Route path='dangerReport' element={<DangerReport />} />
           </Routes>
         </Content>

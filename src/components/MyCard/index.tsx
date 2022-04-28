@@ -5,7 +5,7 @@ import CardContent from '../CardContent'
 import styles from './index.module.less'
 
 interface Props {
-  children: any;
+  children?: any;
 }
 function MyCard(props: Props) {
   const { children } = props
