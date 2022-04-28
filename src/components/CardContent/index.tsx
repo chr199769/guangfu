@@ -1,12 +1,19 @@
 import React from "react"
 import styles from './index.module.less'
 
-function CardContent() {
+interface Props {
+  type: string;
+  data: number;
+  unit: string;
+}
+function CardContent(props: Props) {
+  const { type, data, unit } = props
+  
   return (
     <div className={styles['card-content']}>
-      <div>当日发电</div>
-      <div>90000</div>
-      <div>kwh</div>
+      <div>{type}</div>
+      <div>{data}</div>
+      <div>{unit}</div>
     </div>
     
   )
