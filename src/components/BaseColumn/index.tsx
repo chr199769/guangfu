@@ -19,7 +19,7 @@ const BaseColumn = (props: ChartsProps) => {
       });
   };
   const columnConfig: ColumnConfig = {
-    height: 300,
+    height: 252,
     data,
     xField: '城市',
     yField: '销售额',
