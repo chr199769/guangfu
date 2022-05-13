@@ -43,23 +43,21 @@ function Monitor() {
     </>
   )
   return (
-    <>
-      <div className={styles['monitor-container']}>
-        <div className={styles['monitor-info']} >
-          <div>
-            <MyCard children={renderCard()}/>
-          </div>
-          <div className={styles['monitor-info-pie']}>
-            <BasePie className={styles['pie']} config={factorConfig}/>
-            <BasePie className={styles['pie']} config={factorConfig}/>
-          </div>
-          <Image src={guangfuImg} />
+    <div className={styles['monitor-container']}>
+      <div className={styles['monitor-info']} >
+        <div>
+          <MyCard children={renderCard()} className={styles['monitor-info-card']} />
         </div>
-        <div className={styles['line-container']}>
-          <LineContainer />
+        <div className={styles['monitor-info-pie']}>
+          <BasePie className={styles['pie']} config={factorConfig}/>
+          <BasePie className={styles['pie']} config={factorConfig}/>
         </div>
+        <Image src={guangfuImg} />
       </div>
-    </>
+      <div className={styles['line-container']}>
+        <LineContainer width='100%' cardClass={styles['monitor-line-container-card']}/>
+      </div>
+    </div>
   )
 }
 

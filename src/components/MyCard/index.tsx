@@ -7,23 +7,26 @@ interface Props {
   title?: string;
   bodyStyle?: any;
   headStyle?: any;
+  className?: any;
 }
 function MyCard(props: Props) {
-  const { children, title, bodyStyle, headStyle } = props
+  const { children, title, bodyStyle, headStyle, className = styles.card } = props
   
   return (
     <Card 
-      className={styles.card} 
+      className={className} 
       bodyStyle={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
-        height: '100%',
-        minWidth: '300px',
+        height: '90%',
+        minWidth: '280px',
         ...bodyStyle,
       }}
       headStyle={{
-        height: '40px',
+        minHeight: '35px',
+        height: '1%',
+        lineHeight: '1%',
         ...headStyle,
       }}
       title={title}

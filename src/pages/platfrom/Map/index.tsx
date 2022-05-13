@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DotMap, DotMapConfig } from '@ant-design/maps';
 import { useNavigate } from 'react-router-dom';
+import styles from './index.module.less';
 
 const Map = () => {
   const [data, setData] = useState({ type: 'FeatureCollection', features: [] });
@@ -70,7 +71,7 @@ const Map = () => {
   };
 
   return (
-    <div style={{height: '500px'}}>
+    <div className={styles['map-container']}>
       <DotMap
         {...config}
         onReady={dotMap => {

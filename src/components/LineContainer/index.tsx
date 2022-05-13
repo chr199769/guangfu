@@ -3,26 +3,27 @@ import BaseColumn from '../BaseColumn'
 import BaseLine from '../BaseLine'
 import MyCard from '../MyCard'
 
-const LineContainer = () => {
+interface Props {
+  width: string;
+  cardClass?: any;
+}
+
+const LineContainer = (props: Props) => {
+  const { width, cardClass } = props;
+
   return (
-    <>
+    <div style={{ width }}>
       <MyCard
-        bodyStyle={{ height: '300px' }}
+        className={cardClass}
         title='当月发电量'
-        children={
-        <div style={{height: '300px'}}>
-          <BaseLine />
-        </div>}
+        children={<BaseLine />}
       />
       <MyCard
-        bodyStyle={{ height: '300px' }}
+        className={cardClass}
         title='输出功率曲线'
-        children={
-        <div style={{height: '300px'}}>
-          <BaseColumn />
-        </div>}
+        children={<BaseLine />}
       />
-    </>
+    </div>
   )
 }
 
