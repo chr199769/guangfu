@@ -4,6 +4,7 @@ import CardContainer from './CardContainer'
 import Map from './Map'
 import PieContainer from './PieContainer'
 import styles from './index.module.less'
+import GaugeContainer from './GaugeContainer'
 
 function Platfrom() {
 
@@ -15,7 +16,7 @@ function Platfrom() {
         <LineContainer width='30%'/>
       </div>
       <div style={{ height: '30%', width: '100%' }}>
-        <PieContainer />
+      <GaugeContainer/>
       </div>
     </div>
   )

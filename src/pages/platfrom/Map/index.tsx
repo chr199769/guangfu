@@ -20,6 +20,8 @@ const Map = () => {
       });
   };
 
+  // console.log(data)
+
   const config: DotMapConfig = {
     map: {
       type: 'mapbox',
@@ -72,6 +74,9 @@ const Map = () => {
 
   return (
     <div className={styles['map-container']}>
+      <div className={styles['map-title']}>
+        title
+      </div>
       <DotMap
         {...config}
         onReady={dotMap => {

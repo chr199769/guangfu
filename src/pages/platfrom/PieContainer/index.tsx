@@ -1,5 +1,6 @@
 import React from 'react'
 import BasePie from '../../../components/BasePie'
+import DemoGauge from '../../../components/DemoGauge'
 import styles from './index.module.less'
 
 function PieContainer() {
@@ -57,7 +58,8 @@ function PieContainer() {
    
       </div>
       <div className={styles['power-info-container']}>
-        <BasePie className={styles['pie']} config={factorConfig}/>
+        {/* <BasePie className={styles['pie']} config={factorConfig}/> */}
+        <DemoGauge/>
       </div>
     </div>
   )

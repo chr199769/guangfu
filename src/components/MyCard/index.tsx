@@ -28,6 +28,7 @@ function MyCard(props: Props) {
         height: '1%',
         lineHeight: '1%',
         ...headStyle,
+        color:'white',
       }}
       title={title}
     >

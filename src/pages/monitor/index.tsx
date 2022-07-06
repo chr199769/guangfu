@@ -8,6 +8,8 @@ import LineContainer from '../../components/LineContainer'
 import MyCard from '../../components/MyCard'
 import styles from './index.module.less'
 import guangfuImg from '../../static/guangfu.jpeg'
+import ReactDOM from 'react-dom';
+import { Gauge } from '@ant-design/plots';
 
 function Monitor() {
   const { deviceId } = useParams()
@@ -17,7 +19,9 @@ function Monitor() {
       deviceNum: 100,
     }
   )
-
+const DemoGauge ={
+  
+}
   const factorData = [
     {
       type: '运行中',
@@ -53,6 +57,7 @@ function Monitor() {
           <BasePie className={styles['pie']} config={factorConfig}/>
         </div>
         <Image src={guangfuImg} />
+        
       </div>
       <div className={styles['line-container']}>
         <LineContainer width='100%' cardClass={styles['monitor-line-container-card']}/>
